@@ -1,12 +1,14 @@
 package com.eventoapp.evento.app.models;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 //import javax.persistence.Table;
 
 @Entity
@@ -26,6 +28,9 @@ public class Evento implements Serializable{
 	private String data;
 	@Column
 	private String horario;
+	
+	@OneToMany
+	private List<Convidado> convidado;
 	
 	public String getNome() {
 		return nome;
